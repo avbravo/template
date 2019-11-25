@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:f="http://java.sun.com/jsf/core"
+             xmlns:b="http://bootsfaces.net/ui"
+             xmlns:p="http://primefaces.org/ui">
+
+    <ui:remove>
+        <!--
+                    Hint to editors: The menus follow the Chicago style of capitalization. Please capitalize everything but the "smaller" words. 
+        -->
+    </ui:remove>
+    <b:navBar brand="#{msg['application.shorttitle']}"
+              brandHref="" inverse="true"
+              fixed="top">
+
+        <b:container>
+
+            <b:navbarLinks>
+
+
+                <b:navbarLinks>
+                    <b:navLink outcome="/pages/index" value="#{msg['menubar.home']}" iconAwesome="home" />
+                </b:navbarLinks>
+
+
+               
+
+
+                <b:dropMenu value="#{msg['menubar.registros']}" rendered="#{p:ifAnyGranted('ADMINISTRADOR, SECRETARIA')}">
+
+
+
+                    <b:navLink value="#{msg['menu.vehiculo']}" rendered="#{p:ifAnyGranted('ADMINISTRADOR, SECRETARIA')}"  outcome="/pages/rol/list"  iconAwesome= "fa-car" />
+                    
+                </b:dropMenu>
+
+
+
+                <b:dropMenu value="#{msg['menubar.administracion']}"  rendered="#{p:ifGranted('ADMINISTRADOR')}">
+                  
+                    <b:navLink value="#{msg['menu.rol']}"  outcome="/pages/rol/list" iconAwesome="desktop"  />
+                    <b:navLink value="#{msg['menu.new']}"  outcome="/pages/rol/new" iconAwesome="desktop"  />
+                    <b:navLink value="#{msg['menu.view']}"  outcome="/pages/rol/view" iconAwesome="desktop"  />
+                    
+
+
+
+                </b:dropMenu>
+
+
+
+
+                <b:navLink />
+                <b:navLink />
+
+                <b:dropMenu id="dropMenuTop" class="badge badge-pill badge-danger" value="#{jmoordbNotificationsController.count}" iconAwesome="fa-bell-o" iconAlign="right">
+
+
+                    <b:navLink value="#{jmoordbNotificationsController.count} #{app['menu.viewnotification']}"  outcome="/pages/rol/list" iconAwesome="fa-bell-o"  />
+                    <p:growl id="growl_top" globalOnly="true" life="5000"  showDetail="true"  />
+                    <h:form id="topForm">
+                        <p:remoteCommand 
+                            name="remoteCommandTop" 
+                            update=":growl_top :dropMenuTop"
+                            actionListener="#{jmoordbNotificationsController.actionWebSocket()}" 
+                            process="@all">
+                        </p:remoteCommand>
+                    </h:form>
+                    <b:navLink value="#{msg['menu.notificar']}" rendered="#{p:ifGranted('ADMINISTRADOR')}" outcome="/pages/rol/list" iconAwesome= "fa-phone" />                   
+                    
+
+                </b:dropMenu>
+
+
+
+                <b:dropMenu value="#{app['button.logout']}" >
+
+                    <b:navLink value="#{msg['menu.cambiarpassword']}"  outcome="/pages/rol/list" iconAwesome="fa-expeditedssl"  />
+                    <h:form id="navbartopform">
+                        <p:commandLink class="btnn btnn-primary login-btn" value="#{app['button.logout']}" action="#{loginController.doLogout()}"/>
+                    </h:form>
+                </b:dropMenu>
+
+            </b:navbarLinks>
+
+
+
+        </b:container>
+
+    </b:navBar>
+
+</ui:fragment>
