@@ -9,12 +9,15 @@ package com.avbravo.template.controller;
 import com.avbravo.jmoordb.configuration.JmoordbContext;
 import com.avbravo.jmoordb.configuration.JmoordbControllerEnvironment;
 import com.avbravo.jmoordb.interfaces.IController;
+import com.avbravo.jmoordb.metafactory.JmoordbIntrospection;
 import com.avbravo.jmoordb.mongodb.history.services.AutoincrementableServices;
 import com.avbravo.jmoordbutils.printer.Printer;
 
 import com.avbravo.jmoordb.mongodb.history.services.ErrorInfoServices;
+import com.avbravo.jmoordb.mongodb.repository.Repository;
 import com.avbravo.jmoordb.pojos.JmoordbNotifications;
 import com.avbravo.jmoordb.profiles.repository.JmoordbNotificationsRepository;
+import com.avbravo.jmoordb.util.JmoordbUtil;
 import com.avbravo.jmoordbutils.DateUtil;
 import com.avbravo.jmoordbutils.JmoordbResourcesFiles;
 import com.avbravo.jmoordbutils.JsfUtil;
@@ -133,4 +136,58 @@ public class RolController implements Serializable {
         }
         return "";
     }
+    
+    public String prepareGoList(){
+        return "/faces/pages/rol/list";
+    }
+    
+   public String first() {
+        try {
+            Integer page = 1;
+            move(page);
+        } catch (Exception e) {
+            JmoordbUtil.errorMessage( e.getLocalizedMessage());
+        }
+        return "";
+    }// </editor-fold>
+   public String last() {
+        try {
+            //indicar ultima pagina
+            move(page);
+        } catch (Exception e) {
+            JmoordbUtil.errorMessage( e.getLocalizedMessage());
+        }
+        return "";
+    }// </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="next">
+    public String next() {
+        try {
+            
+
+            move(page);
+        } catch (Exception e) {
+            JmoordbUtil.errorMessage( e.getLocalizedMessage());
+        }
+        return "";
+    }// </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="back">
+    public String back() {
+        try {
+          
+            if (page > 1) {
+                page--;
+            }
+            move(page);
+        } catch (Exception e) {
+            JmoordbUtil.errorMessage( e.getLocalizedMessage());
+        }
+        return "";
+    }// </editor-fold>
+
+    public void move(Integer page){
+        
+    }
+
 }
