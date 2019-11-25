@@ -85,3 +85,12 @@ web.xml
             <url>https://jitpack.io</url>
         </repository>
 
+
+Clases:
+
+ApplicationConfig.java
+
+CustomInMemoryIdentityStore.java
+
+LoginController.java
+
