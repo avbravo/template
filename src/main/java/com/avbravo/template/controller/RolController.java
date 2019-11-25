@@ -189,5 +189,18 @@ public class RolController implements Serializable {
     public void move(Integer page){
         
     }
+    
+    public String prepareNew(){
+        rol = new Rol();
+        return "";
+    }
+    public String prepareGoNew(){
+        
+        return "/faces/pages/rol/new";
+    }
+    public String prepareView(){
+        
+        return "/faces/pages/rol/view";
+    }
 
 }

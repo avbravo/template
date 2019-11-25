@@ -267,6 +267,7 @@ public class DashboardIndexController implements Serializable {
             totalVehiculosActivos -= totalVehiculosEnReparacion;
 
         } catch (Exception e) {
+   
           JsfUtil.errorDialog("calcularTotales()", e.getLocalizedMessage());
         }
     }
