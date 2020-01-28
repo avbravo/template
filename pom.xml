@@ -34,11 +34,7 @@
             <version>7.0</version>
         </dependency>
       
-        <dependency>
-            <groupId>com.github.avbravo</groupId>
-            <artifactId>jmoordb</artifactId>
-            <version>0.52</version>
-        </dependency>
+        
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
@@ -109,6 +105,20 @@
             <artifactId>bootsfaces</artifactId>
             <version>1.4.2</version>
         </dependency>
+         <dependency>
+            <groupId>javax.websocket</groupId>
+            <artifactId>javax.websocket-api</artifactId>
+            <version>1.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--
+                jmoordb
+-->
+        <dependency>
+            <groupId>com.github.avbravo</groupId>
+            <artifactId>jmoordb</artifactId>
+            <version>0.52</version>
+        </dependency>
         <dependency>
             <groupId>com.github.avbravo</groupId>
             <artifactId>jmoordbsecurity</artifactId>
@@ -122,14 +132,9 @@
         <dependency>
             <groupId>com.github.avbravo</groupId>
             <artifactId>jmoordbutils</artifactId>
-            <version>0.45</version>
+            <version>0.52</version>
         </dependency>
-        <dependency>
-            <groupId>javax.websocket</groupId>
-            <artifactId>javax.websocket-api</artifactId>
-            <version>1.1</version>
-            <scope>provided</scope>
-        </dependency>
+       
               <dependency>
             <groupId>com.github.avbravo</groupId>
             <artifactId>jmoordbbootfacespatch</artifactId>
