@@ -266,26 +266,26 @@ RolServices rolServices;
                 return null;
             }
   
-            usernameRecover = usernameRecoveryOfSession();
-            recoverSession = !usernameRecover.equals("");
-            if (recoverSession) {
-                invalidateCurrentSession();
-                //  RequestContext.getCurrentInstance().execute("PF('sessionDialog').show();");
-                JsfUtil.warningMessage(rf.getAppMessage("session.procederacerrar"));
-                return "";
-            }
-            if (recoverSession && usernameRecover.equals(username)) {
-            } else {
-                if (isUserLogged(username)) {
-                    userwasLoged = true;
-                    JsfUtil.warningMessage(rf.getAppMessage("login.alreadylogged"));
-                    if (destroyByUsername(username)) {
-
-                    }
-                    return "";
-                }
-
-            }
+//            usernameRecover = usernameRecoveryOfSession();
+//            recoverSession = !usernameRecover.equals("");
+//            if (recoverSession) {
+//                invalidateCurrentSession();
+//                //  RequestContext.getCurrentInstance().execute("PF('sessionDialog').show();");
+//                JsfUtil.warningMessage(rf.getAppMessage("session.procederacerrar"));
+//                return "";
+//            }
+//            if (recoverSession && usernameRecover.equals(username)) {
+//            } else {
+//                if (isUserLogged(username)) {
+//                    userwasLoged = true;
+//                    JsfUtil.warningMessage(rf.getAppMessage("login.alreadylogged"));
+//                    if (destroyByUsername(username)) {
+//
+//                    }
+//                    return "";
+//                }
+//
+//            }
        
             if (!isValidSession(username)) {
                 return "";
