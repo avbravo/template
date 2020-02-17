@@ -63,7 +63,7 @@ web.xml
         <dependency>
             <groupId>com.github.avbravo</groupId>
             <artifactId>jmoordbutils</artifactId>
-            <version>0.42</version>
+            <version>0.53</version>
         </dependency>
         <dependency>
             <groupId>javax.websocket</groupId>
