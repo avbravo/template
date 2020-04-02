@@ -95,7 +95,7 @@
         <dependency>
             <groupId>com.github.avbravo</groupId>
             <artifactId>jmoordb</artifactId>
-            <version>0.53</version>
+            <version>0.54</version>
         </dependency>
         <dependency>
             <groupId>com.github.avbravo</groupId>
@@ -105,12 +105,12 @@
         <dependency>
             <groupId>com.github.avbravo</groupId>
             <artifactId>jmoordbjsf</artifactId>
-            <version>0.44</version>
+            <version>0.47</version>
         </dependency>
         <dependency>
             <groupId>com.github.avbravo</groupId>
             <artifactId>jmoordbutils</artifactId>
-            <version>0.82</version>
+            <version>0.84</version>
         </dependency>
        
         <dependency>
